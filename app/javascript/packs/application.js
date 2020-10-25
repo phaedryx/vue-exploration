@@ -10,5 +10,13 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-import Routes from '../RailsRoutes.js.erb'
-window.Routes = Routes
+// import Routes from '../RailsRoutes.js.erb'
+// window.Routes = Routes
+
+import { mountAll } from '../utils.js'
+
+import InPlaceEdit from '../apps/InPlaceEdit.js'
+
+document.addEventListener('DOMContentLoaded', () => {
+  mountAll(InPlaceEdit, '[data-app="InPlaceEdit"]')
+})
